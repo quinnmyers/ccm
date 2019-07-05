@@ -1,4 +1,3 @@
-
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -30,7 +29,14 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
-    'gatsby-plugin-offline',
-    `gatsby-plugin-sass`
+    "gatsby-plugin-offline",
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `sc7yy8cney26`,
+        accessToken: `_SK59kyFx27ZUH6kZ9i1prn_y4WGKc47V1pSaDGUW3A`,
+      },
+    },
   ],
 }
