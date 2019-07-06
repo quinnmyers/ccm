@@ -1,12 +1,12 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
-import "../components/pagestyles/home.sass"
+import "../components/pagestyles/blog.sass"
 import Layout from "../components/layout/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import Content from "../components/utility/Content/Content"
 
-class IndexPage extends Component {
+class Blog extends Component {
   constructor(props) {
     super(props)
     this.state = {}
@@ -18,19 +18,13 @@ class IndexPage extends Component {
         <Content>
           <p>is this from contentful?</p>
           <br />
-          <p>{this.props.data.contentfulHomePage.testContent}</p>
+          {/* <p>{this.props.data.contentfulHomePage.testContent}</p> */}
         </Content>
       </Layout>
     )
   }
 }
 
-export const query = graphql`
-  query IndexPageQuery {
-    contentfulHomePage {
-      testContent
-    }
-  }
-`
+// export const query = graphql``
 
-export default IndexPage
+export default Blog
