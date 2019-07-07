@@ -10,18 +10,20 @@ class TeamMember extends Component {
       qualificationHeight: "auto",
       skillHeight: "auto",
     }
+    this.setHeights = this.setHeights.bind(this)
   }
   componentDidMount() {
     this.measureTitle()
     this.measureQualifications()
     this.measureSkill()
-    setTimeout(() => {
-      this.setState({
-        titleHeight: this.props.titleHeight,
-        qualificationHeight: this.props.qualificationHeight,
-        skillHeight: this.props.skillHeight,
-      })
-    }, 70)
+    process.nextTick(this.setHeights)
+  }
+  setHeights() {
+    this.setState({
+      titleHeight: this.props.titleHeight,
+      qualificationHeight: this.props.qualificationHeight,
+      skillHeight: this.props.skillHeight,
+    })
   }
   measureTitle() {
     this.props.measureHeight(this.title, "title")

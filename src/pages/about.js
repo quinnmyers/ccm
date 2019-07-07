@@ -23,6 +23,7 @@ class About extends Component {
   }
   componentDidMount() {
     // console.log(this.props)
+    process.nextTick(console.log("hi"))
   }
   measureInfoDivHeight(ref, name) {
     const el = ref
@@ -32,30 +33,23 @@ class About extends Component {
         this.state.titleDivHeights.push(height)
         this.state.titleDivHeights.sort().reverse()
         const titleQualification = this.state.titleDivHeights[0]
-        setTimeout(() => {
-          this.setState({
-            titleHeight: titleQualification.toString(),
-          })
-        }, 20)
+        this.setState({
+          titleHeight: titleQualification.toString(),
+        })
       case "qualification":
         this.state.qualificationDivHeights.push(height)
         this.state.qualificationDivHeights.sort().reverse()
         const highestQualification = this.state.qualificationDivHeights[0]
-        setTimeout(() => {
-          this.setState({
-            qualificationHeight: highestQualification.toString(),
-          })
-        }, 20)
-
+        this.setState({
+          qualificationHeight: highestQualification.toString(),
+        })
       case "skill":
         this.state.skillDivHeights.push(height)
         this.state.skillDivHeights.sort().reverse()
         const highestSkill = this.state.skillDivHeights[0]
-        setTimeout(() => {
-          this.setState({
-            skillHeight: highestSkill.toString(),
-          })
-        }, 20)
+        this.setState({
+          skillHeight: highestSkill.toString(),
+        })
       default:
         return
     }
