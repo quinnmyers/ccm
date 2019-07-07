@@ -11,10 +11,54 @@ import { graphql } from "gatsby"
 class About extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      titleDivHeights: [],
+      qualificationDivHeights: [],
+      skillDivHeights: [],
+      titleHeight: 0,
+      qualificationHeight: 0,
+      skillHeight: 0,
+    }
+    this.measureInfoDivHeight = this.measureInfoDivHeight.bind(this)
   }
   componentDidMount() {
-    console.log(this.props)
+    // console.log(this.props)
+  }
+  measureInfoDivHeight(ref, name) {
+    const el = ref
+    const height = el.getBoundingClientRect().height
+    switch (name) {
+      case "title":
+        this.state.titleDivHeights.push(height)
+        this.state.titleDivHeights.sort().reverse()
+        const titleQualification = this.state.titleDivHeights[0]
+        setTimeout(() => {
+          this.setState({
+            titleHeight: titleQualification.toString(),
+          })
+        }, 20)
+      case "qualification":
+        this.state.qualificationDivHeights.push(height)
+        this.state.qualificationDivHeights.sort().reverse()
+        const highestQualification = this.state.qualificationDivHeights[0]
+        setTimeout(() => {
+          this.setState({
+            qualificationHeight: highestQualification.toString(),
+          })
+        }, 20)
+
+      case "skill":
+        this.state.skillDivHeights.push(height)
+        this.state.skillDivHeights.sort().reverse()
+        const highestSkill = this.state.skillDivHeights[0]
+        setTimeout(() => {
+          this.setState({
+            skillHeight: highestSkill.toString(),
+          })
+        }, 20)
+      default:
+        return
+    }
   }
   render() {
     const aboutPage = this.props.data.contentfulAboutPage
@@ -40,6 +84,11 @@ class About extends Component {
                         title={t.titles}
                         qualifications={t.qualifications}
                         skills={t.skills}
+                        key={t.id}
+                        measureHeight={this.measureInfoDivHeight}
+                        titleHeight={this.state.titleHeight}
+                        qualificationHeight={this.state.qualificationHeight}
+                        skillHeight={this.state.skillHeight}
                       />
                     ))}
                   </div>
@@ -68,6 +117,7 @@ export const query = graphql`
       }
       teamSectionTitle
       teamMembers {
+        id
         name
         titles
         qualifications
