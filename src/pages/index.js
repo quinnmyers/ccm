@@ -14,7 +14,6 @@ class IndexPage extends Component {
     this.state = {}
     this.scrollRef = React.createRef()
   }
-  componentDidMount() {}
   render() {
     const { data } = this.props
     const indexQuery = data.contentfulHomePage

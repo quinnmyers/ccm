@@ -23,7 +23,9 @@ html
   @include tablet-phone 
     font-size: 2.38vw
   @media(max-width: 500px)
-    font-size: 3vw
+    font-size: 2.8vw
+  @include phone-large 
+    font-size: 3.2vw
   section 
     // background: red
     padding: 40px 0px
@@ -32,7 +34,7 @@ html
   h2 
     font-size: 1.8em
     // padding-top: .62em
-    padding-bottom: 1em
+    // padding-bottom: 1em
     @include tablet-phone 
       font-size: 2.05em
       padding-bottom: 0.7em
@@ -61,7 +63,8 @@ html
     display: flex
     align-self: center
     // align-content: center
-    width: 1120px
+    width: 1080px
+    // background: teal
     // width: 1000px
     height: 100%
     padding: 0px 40px

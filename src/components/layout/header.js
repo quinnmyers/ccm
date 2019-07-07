@@ -12,16 +12,24 @@ class Headder extends Component {
           link: "/",
         },
         {
-          title: "storybook",
-          link: "storybook",
+          title: "About",
+          link: "about",
         },
         {
-          title: "About",
+          title: "Projects",
           link: "about",
         },
         {
           title: "Blog",
           link: "blog",
+        },
+        {
+          title: "Houzz Profile",
+          link: "contact",
+        },
+        {
+          title: "Testimonials",
+          link: "testimonials",
         },
         {
           title: "Contact",
