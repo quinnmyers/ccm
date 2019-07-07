@@ -6,6 +6,15 @@ class Landing extends Component {
   constructor(props) {
     super(props)
   }
+  componentDidMount() {
+    console.log(this.props)
+  }
+  handleScrolling = () => {
+    this.props.scrollTo.current.scrollIntoView({
+      block: "start",
+      behavior: "smooth",
+    })
+  }
   render() {
     return (
       <BackgroundImage
@@ -19,14 +28,13 @@ class Landing extends Component {
             className="bg__hero__image"
             style={{
               width: this.props.heroWidth,
-              height: this.props.heroHeight,
             }}
           >
             <Img fluid={this.props.heroImage} alt={this.props.heroImageAlt} />
           </div>
         </div>
         <div className="bg__scroll">
-          <button>
+          <button onClick={() => this.handleScrolling()}>
             <Img fluid={this.props.arrow} />
           </button>
         </div>

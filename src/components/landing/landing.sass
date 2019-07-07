@@ -1,3 +1,4 @@
+@import "../base.sass"
 .bg
     display: flex
     height: 100vh
@@ -9,6 +10,10 @@
         justify-content: center
         width: 100%
         height: calc(100% - 100px)
+        &__image[style]
+            @include tablet-phone 
+                width: 80% !important
+
     &__scroll
         justify-self: flex-end
         display: flex

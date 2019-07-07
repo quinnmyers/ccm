@@ -12,10 +12,9 @@ class IndexPage extends Component {
   constructor(props) {
     super(props)
     this.state = {}
+    this.scrollRef = React.createRef()
   }
-  componentDidMount() {
-    console.log(this.props)
-  }
+  componentDidMount() {}
   render() {
     const { data } = this.props
     const indexQuery = data.contentfulHomePage
@@ -29,9 +28,24 @@ class IndexPage extends Component {
           heroWidth="50%"
           heroHeight="50%"
           heroImageAlt={miscQuery.logo.title}
+          scrollTo={this.scrollRef}
         />
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <Layout>
+          <Content>
+            <div ref={this.scrollRef} className="cta">
+              <h2>CCM ARCHITECTURE</h2>
+              <hr />
+              <p>
+                CCM Architecture is an Architectural Design and Construction
+                company that focuses on providing thoughtful yet creative design
+                solutions which enable the construction of beautiful, high
+                quality spaces. We strive to design and build responsibly,
+                giving thought to the environment while utilizing local trades,
+                sourcing local materials or materials made in the USA.
+              </p>
+            </div>
+          </Content>
           <FixedBg backGroundImage={indexQuery.firstPageImage.fluid}>
             <div className="cards">
               <HomeCard
