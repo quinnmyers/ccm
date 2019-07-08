@@ -17,7 +17,17 @@ class Headder extends Component {
         },
         {
           title: "Projects",
-          link: "about",
+          link: null,
+          subLink: [
+            {
+              title: "Commercial",
+              link: "commercial",
+            },
+            {
+              title: "Residental",
+              link: "residental",
+            },
+          ],
         },
         {
           title: "Blog",
@@ -37,6 +47,7 @@ class Headder extends Component {
         },
       ],
       navOpen: false,
+      subOpen: false,
     }
     this.toggleNav = this.toggleNav.bind(this)
   }
@@ -44,22 +55,41 @@ class Headder extends Component {
     const currentstate = this.state.navOpen
     this.setState({ navOpen: !currentstate })
   }
+  showSub = () => {
+    this.setState({ subOpen: !this.state.subOpen })
+  }
+
   render() {
     return (
       <div className="header__wrapper">
         <Content>
           <div className="header">
-            <h1>
-              <Link to={"/"}>{this.props.siteTitle}</Link>
-            </h1>
             {/* desktop nav */}
             <div className="desktop">
               <nav className="nav">
                 {this.state.navlinks.map((link, index) => (
-                  <div className="nav__link">
-                    <Link to={link.link} key={index}>
-                      {link.title}
-                    </Link>
+                  <div className="nav__link" key={index}>
+                    {link.link != null ? (
+                      <Link to={link.link}>{link.title}</Link>
+                    ) : (
+                      <div
+                        className="nav__link__drop"
+                        onClick={() => this.showSub()}
+                      >
+                        {link.title}
+                        <div
+                          className={`nav__link__drop__content ${
+                            this.state.subOpen ? "sub__show" : " "
+                          }`}
+                        >
+                          {link.subLink.map((sublink, index) => (
+                            <Link to={sublink.link} key={index + 20}>
+                              {sublink.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </nav>
@@ -81,10 +111,28 @@ class Headder extends Component {
               </button>
               <nav className={`nav`}>
                 {this.state.navlinks.map((link, index) => (
-                  <div className="nav__link">
-                    <Link to={link.link} key={index}>
-                      {link.title}
-                    </Link>
+                  <div className="nav__link" key={index}>
+                    {link.link != null ? (
+                      <Link to={link.link}>{link.title}</Link>
+                    ) : (
+                      <div
+                        className="nav__link__drop"
+                        onClick={() => this.showSub()}
+                      >
+                        {link.title}
+                        <div
+                          className={`nav__link__drop__content ${
+                            this.state.subOpen ? "sub__show" : " "
+                          }`}
+                        >
+                          {link.subLink.map((sublink, index) => (
+                            <Link to={sublink.link} key={index + 20}>
+                              {sublink.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </nav>
