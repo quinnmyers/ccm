@@ -66,8 +66,10 @@ class About extends Component {
             <div className="about__content">
               <h1 className="page__header">{aboutPage.pageTitle}</h1>
               <h4 className="page__subheader">{aboutPage.pageSubTitle}</h4>
-              <p>{aboutPage.aboutDescription.internal.content}</p>
-              <div className="about__content__team">
+              <p className="page__description">
+                {aboutPage.aboutDescription.internal.content}
+              </p>
+              <div className="about__content__team content__section">
                 <h2>{aboutPage.teamSectionTitle}</h2>
                 <div className="about__content__team__container">
                   <div className="about__content__team__container__members">

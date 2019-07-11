@@ -1,1 +1,33 @@
 @import '../base.sass'
+
+.contact
+  display: flex 
+  flex-direction: column
+  background: red
+  .contact__content 
+    display: flex
+    flex-direction: column
+    width: 100%
+    &__container
+      display: flex
+      height: 100%
+      &__left 
+        display: flex
+        flex-direction: column
+        width: 25%
+        background: lightskyblue
+        &__logo
+          width: 100%
+        &__info 
+      .line 
+        background: black
+        height: 100%
+        width: 1px
+      &__right 
+        display: flex
+        background: pink
+        flex: 1
+        justify-content: center 
+        &__form 
+          background: orange 
+          width: 90%
