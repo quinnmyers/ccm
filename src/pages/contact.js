@@ -28,25 +28,30 @@ class Contact extends Component {
       renderNode: {
         [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
       },
+      renderText: text => {
+        return text.split("\n").reduce((children, textSegment, index) => {
+          return [...children, index > 0 && <br key={index} />, textSegment]
+        }, [])
+      },
     }
-    const document = {
-      nodeType: "document",
-      data: {},
-      content: [
-        {
-          nodeType: "paragraph",
-          data: {},
-          content: [
-            {
-              nodeType: "text",
-              value: "hi",
-              marks: [],
-              data: {},
-            },
-          ],
-        },
-      ],
-    }
+    // const document = {
+    //   nodeType: "document",
+    //   data: {},
+    //   content: [
+    //     {
+    //       nodeType: "paragraph",
+    //       data: {},
+    //       content: [
+    //         {
+    //           nodeType: "text",
+    //           value: "hi",
+    //           marks: [],
+    //           data: {},
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // }
     return (
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
@@ -73,7 +78,7 @@ class Contact extends Component {
                           .address.json,
                         options
                       )}
-                      {/* {documentToReactComponents(document)} */}
+                      {/* {documentToReactComponents(document, options)} */}
                     </p>
                     <p>{contactQuery.phoneNumber}</p>
                   </div>
@@ -81,7 +86,19 @@ class Contact extends Component {
                 <div className="line"></div>
                 <div className="contact__content__container__right">
                   <div className="contact__content__container__right__form">
-                    <p>testing</p>
+                    <form
+                      action={`https://formspree.io/${contactQuery.contactEmailAddress}`}
+                      method="POST"
+                    >
+                      <label for="name">Name</label>
+                      <input type="text" name="name" />
+                      <label for="name">E-Mail</label>
+                      <input type="email" name="email" />
+                      <label for="phonenumber">Phone Number</label>
+                      <input type="text" name="phonenumber" />
+                      <textarea name="message"></textarea>
+                      <input type="submit" value="Send" />
+                    </form>
                   </div>
                 </div>
               </div>
@@ -109,6 +126,7 @@ export const query = graphql`
     contentfulContactPage {
       pageTitle
       pageSubtitle
+      contactEmailAddress
       contactDescription {
         internal {
           content
