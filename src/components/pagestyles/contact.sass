@@ -3,7 +3,6 @@
 .contact
   display: flex 
   flex-direction: column
-  // background: red
   .contact__content 
     display: flex
     flex-direction: column
@@ -11,49 +10,69 @@
     &__container
       display: flex
       height: 100%
+      @include tablet-phone 
+        flex-direction: column
       &__left 
         display: flex
         flex-direction: column
         justify-content: center
         align-items: center
         width: 30%
-        background: lightskyblue
         padding: 0em 2em
+        @include edgesnap 
+          padding: 0em 0em
+        @include tablet-phone  
+          width: 50% 
+          align-self: center
+        @include phone-large 
+          width: 70%
         &__logo
           width: 100%
         &__info 
-          background: orange
           font-size: 1.1em
           margin-top: 1em
           width: 100%
           padding: 0em 0em 0em .85em
+          @include tablet-phone  
+            text-align: center
           .phone
             p 
               margin-top: .5em 
       .line 
         background: black
         height: 100%
+        margin: 0em 3em
         width: 1px
+        @include edgesnap 
+          margin: 0em 2em
+        @include tablet-phone 
+          display: none
       &__right 
         display: flex
-        // background: pink
         flex: 1
         justify-content: center 
         &__form 
           display: flex
-          // background: orange 
-          width: 90%
+          width: 100%
           --border: 3px
           form 
             display: flex 
-            flex-direction: column
             width: 100%
-            background: pink
+            flex-direction: column
             padding: 4em 0em
             position: relative
+            @include tablet-phone  
+              padding: 2em 0em
             label 
               margin-bottom: .3em
-            input, textarea 
+              textarea 
+                resize: none
+                height: 9em
+                @include tablet-phone 
+                  margin-bottom: 2em
+                @include tablet-phone 
+                  margin-bottom: 2.8em
+            input
               border: 1px solid lightgrey 
               border-radius: var(--border)
             input 
@@ -61,9 +80,7 @@
               margin-bottom: 1em
               height: 2.1em
               font-size: .9em
-            textarea 
-              resize: none
-              height: 9em
+         
             .button
               --height: 35px
               display: flex
@@ -78,10 +95,20 @@
               color: white
               transition: all .38s ease-in-out
               font-size: .9em
+              @include edgesnap 
+                width: 120px
+                --height: 30px
+              @include tablet-phone 
+                width: 105px
+              @include tablet-phone 
+                --height: 32px
+                font-size: 1em
+              @include phone-small 
+                --height: 28px 
+                width: 80px
               &:hover 
                 background: rgb(101,200,122)
                 color: white
                 transform: translateY(-.2em) scale(1.05)
               input 
                 border: none
-                

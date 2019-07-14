@@ -103,17 +103,17 @@ export const query = graphql`
     contentfulHomePage {
       landingImage {
         fluid(maxWidth: 2000) {
-          ...GatsbyContentfulFluid_withWebp
+          ...GatsbyContentfulFluid
         }
       }
       firstPageImage {
         fluid(maxWidth: 2000) {
-          ...GatsbyContentfulFluid_withWebp_noBase64
+          ...GatsbyContentfulFluid
         }
       }
       secondPageImage {
         fluid {
-          ...GatsbyContentfulFluid_withWebp_noBase64
+          ...GatsbyContentfulFluid
         }
       }
       commercialIcon {

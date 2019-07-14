@@ -92,14 +92,26 @@ class Contact extends Component {
                       action={`https://formspree.io/${contactQuery.contactEmailAddress}`}
                       method="POST"
                     >
-                      <label for="name">Name</label>
-                      <input type="text" name="name" />
-                      <label for="name">E-Mail</label>
-                      <input type="email" name="email" />
-                      <label for="phonenumber">Phone Number</label>
-                      <input type="text" name="phonenumber" />
-                      <label for="message">Message</label>
-                      <textarea name="message"></textarea>
+                      <label>
+                        Name
+                        <input type="text" />
+                      </label>
+
+                      <label for="name">
+                        E-Mail
+                        <input type="email" name="email" />
+                      </label>
+
+                      <label>
+                        Phone Number
+                        <input type="text" />
+                      </label>
+
+                      <label>
+                        Message
+                        <textarea name="message"></textarea>
+                      </label>
+
                       <div className="button">
                         <input type="submit" value="Send" />
                       </div>
