@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Link } from "gatsby"
+import ALink from "../utility/link/auto_link"
 import "./header.sass"
 import Content from "../utility/Content/Content"
 class Headder extends Component {
@@ -31,15 +31,15 @@ class Headder extends Component {
         },
         {
           title: "Blog",
-          link: "blog",
+          link: "https://ccmarchitecture.blogspot.com/",
         },
         {
           title: "Houzz Profile",
-          link: "contact",
+          link: "https://www.houzz.com/pro/ccmellon/",
         },
         {
           title: "Testimonials",
-          link: "testimonials",
+          link: "https://www.houzz.com/pro/ccmellon/ccm-architecture#Reviews",
         },
         {
           title: "Contact",
@@ -70,7 +70,7 @@ class Headder extends Component {
                 {this.state.navlinks.map((link, index) => (
                   <div className="nav__link" key={index}>
                     {link.link != null ? (
-                      <Link to={link.link}>{link.title}</Link>
+                      <ALink to={link.link}>{link.title}</ALink>
                     ) : (
                       <div
                         className="nav__link__drop"
@@ -83,9 +83,9 @@ class Headder extends Component {
                           }`}
                         >
                           {link.subLink.map((sublink, index) => (
-                            <Link to={sublink.link} key={index + 20}>
+                            <ALink to={sublink.link} key={index + 20}>
                               {sublink.title}
-                            </Link>
+                            </ALink>
                           ))}
                         </div>
                       </div>
@@ -113,7 +113,7 @@ class Headder extends Component {
                 {this.state.navlinks.map((link, index) => (
                   <div className="nav__link" key={index}>
                     {link.link != null ? (
-                      <Link to={link.link}>{link.title}</Link>
+                      <ALink to={link.link}>{link.title}</ALink>
                     ) : (
                       <div
                         className="nav__link__drop"
@@ -126,9 +126,9 @@ class Headder extends Component {
                           }`}
                         >
                           {link.subLink.map((sublink, index) => (
-                            <Link to={sublink.link} key={index + 20}>
+                            <ALink to={sublink.link} key={index + 20}>
                               {sublink.title}
-                            </Link>
+                            </ALink>
                           ))}
                         </div>
                       </div>

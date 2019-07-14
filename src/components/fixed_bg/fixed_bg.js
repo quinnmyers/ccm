@@ -11,8 +11,9 @@ class FixedBg extends Component {
         Tag="div"
         className="fixed"
         fluid={this.props.backGroundImage}
-        backgroundColor={`#040e18`}
+        backgroundColor={`#98816e`}
         style={{ backgroundAttachment: "fixed" }}
+        fadeIn={true}
       >
         {this.props.children}
       </BackgroundImage>

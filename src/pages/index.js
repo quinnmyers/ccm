@@ -102,18 +102,18 @@ export const query = graphql`
     }
     contentfulHomePage {
       landingImage {
-        fluid {
-          ...GatsbyContentfulFluid_noBase64
+        fluid(maxWidth: 2000) {
+          ...GatsbyContentfulFluid_withWebp
         }
       }
       firstPageImage {
-        fluid {
-          ...GatsbyContentfulFluid_noBase64
+        fluid(maxWidth: 2000) {
+          ...GatsbyContentfulFluid_withWebp_noBase64
         }
       }
       secondPageImage {
         fluid {
-          ...GatsbyContentfulFluid_noBase64
+          ...GatsbyContentfulFluid_withWebp_noBase64
         }
       }
       commercialIcon {
