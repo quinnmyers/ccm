@@ -21,7 +21,9 @@ class Landing extends Component {
         Tag="div"
         className="bg"
         fluid={this.props.backGroundImage}
-        backgroundColor={`#040e18`}
+        backgroundColor={`#c9e0fc`}
+        fadeIn={true}
+        loading="eager"
       >
         <div className="bg__hero">
           <div
