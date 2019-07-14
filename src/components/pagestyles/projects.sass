@@ -24,8 +24,19 @@
         display: flex
         flex-wrap: wrap
         // flex-direction: column-reverse
-        flex-direction: row-reverse
-        justify-content: space-between
+        // flex-direction: row-reverse
+        // justify-content: space-between
         // opacity: 0
         transition: all 1s ease-in-out
+        // .lightbox
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        &__single
+            width: 23%
+            margin-bottom: 25px
+            text-align: center
+            @include navsnap
+                width: 48%
       
