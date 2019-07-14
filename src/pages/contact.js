@@ -80,7 +80,9 @@ class Contact extends Component {
                       )}
                       {/* {documentToReactComponents(document, options)} */}
                     </p>
-                    <p>{contactQuery.phoneNumber}</p>
+                    <div className="phone">
+                      <p>{contactQuery.phoneNumber}</p>
+                    </div>
                   </div>
                 </div>
                 <div className="line"></div>
@@ -96,8 +98,11 @@ class Contact extends Component {
                       <input type="email" name="email" />
                       <label for="phonenumber">Phone Number</label>
                       <input type="text" name="phonenumber" />
+                      <label for="message">Message</label>
                       <textarea name="message"></textarea>
-                      <input type="submit" value="Send" />
+                      <div className="button">
+                        <input type="submit" value="Send" />
+                      </div>
                     </form>
                   </div>
                 </div>
