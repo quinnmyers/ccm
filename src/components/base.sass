@@ -79,6 +79,7 @@ html
 .page__header 
   text-align: center 
   margin-bottom: .15em
+  margin-top: 1em
 
 .page__subheader
   text-align: center
@@ -86,6 +87,23 @@ html
 // .section-header, .section__header
 //   h2
 //     color: red
+
+p.page__description 
+  align-self: center
+  margin-top: 2em
+  max-width: 75%
+  text-align: center
+  @include edgesnap 
+    max-width: 85%
+    // background: red
+  @include phone-large 
+    max-width: 100%
+
+.content__section
+  margin-top: 3.75em
+  @include edgesnap 
+    margin-top: 3.75em
+
 
 #app
   display: flex
