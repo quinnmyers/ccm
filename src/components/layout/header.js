@@ -13,7 +13,7 @@ class Headder extends Component {
         },
         {
           title: "About",
-          link: "about",
+          link: "/about/",
         },
         {
           title: "Projects",
@@ -21,11 +21,11 @@ class Headder extends Component {
           subLink: [
             {
               title: "Commercial",
-              link: "commercial",
+              link: "/commercial/",
             },
             {
               title: "Residental",
-              link: "residental",
+              link: "/residental/",
             },
           ],
         },
@@ -43,7 +43,7 @@ class Headder extends Component {
         },
         {
           title: "Contact",
-          link: "contact",
+          link: "/contact/",
         },
       ],
       navOpen: false,

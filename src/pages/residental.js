@@ -23,8 +23,8 @@ class Residental extends Component {
         <Content>
           <div className="page">
             <div className="page__title">
-              <h2>Residental Projects</h2>
-              <h4>CCM Architecture</h4>
+              <h2>{projectsQuery.pageTitle}</h2>
+              <h4>{projectsQuery.pageSubtitle}</h4>
             </div>
             <div className={`page__photos`}>
               {projectsQuery.residentialProjectsOnPage.map((proj, index) => (
@@ -50,6 +50,8 @@ class Residental extends Component {
 export const query = graphql`
   query residentalQuery {
     contentfulResidentialProjectsPage {
+      pageTitle
+      pageSubtitle
       residentialProjectsOnPage {
         additionalImages {
           file {
