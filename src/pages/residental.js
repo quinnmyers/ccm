@@ -16,7 +16,7 @@ class Residental extends Component {
   }
   render() {
     const { data } = this.props
-    const projectsQuery = data.allContentfulProjects
+    const projectsQuery = data.contentfulResidentialProjectsPage
     return (
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
@@ -27,11 +27,18 @@ class Residental extends Component {
               <h4>CCM Architecture</h4>
             </div>
             <div className={`page__photos`}>
-              <LightBox
-                photos={projectsQuery.edges.filter(
-                  img => img.node.commercialOrResidental === true
-                )}
-              />
+              {projectsQuery.residentialProjectsOnPage.map((proj, index) => (
+                <div key={index} className="page__photos__single">
+                  <h4>{proj.title}</h4>
+                  <p>{proj.city}</p>
+                  <LightBox
+                    photos={proj.additionalImages}
+                    cover={proj.image.fluid}
+                    caption={proj.imageCaption.json}
+                    alt={proj.image.title}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </Content>
@@ -42,21 +49,23 @@ class Residental extends Component {
 
 export const query = graphql`
   query residentalQuery {
-    allContentfulProjects {
-      edges {
-        node {
-          title
-          city
-          image {
-            fluid(maxWidth: 1500) {
-              ...GatsbyContentfulFluid_noBase64
-            }
-            file {
-              url
-            }
+    contentfulResidentialProjectsPage {
+      residentialProjectsOnPage {
+        additionalImages {
+          file {
+            url
           }
-
-          commercialOrResidental
+        }
+        imageCaption {
+          json
+        }
+        city
+        title
+        image {
+          title
+          fluid(maxWidth: 500) {
+            ...GatsbyContentfulFluid
+          }
         }
       }
     }
