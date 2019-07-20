@@ -8,7 +8,7 @@ class FixedBg extends Component {
     }
   }
   componentDidMount() {
-    if (window.matchMedia("(max-width: 600px)").matches) {
+    if (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)) {
       this.setState({ mob: true })
     }
   }
