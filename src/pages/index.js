@@ -49,12 +49,12 @@ class IndexPage extends Component {
             <div className="cards">
               <HomeCard
                 linkText="Residental"
-                link="blog"
+                link="/residental/"
                 icon={indexQuery.residentialIcon.fluid}
               />
               <HomeCard
                 linkText="Commercial"
-                link="blog"
+                link="/commercial/"
                 icon={indexQuery.commercialIcon.fluid}
               />
             </div>
@@ -68,13 +68,13 @@ class IndexPage extends Component {
             <div className="cards">
               <HomeCard
                 linkText="Blog"
-                link="blog"
+                link="https://ccmarchitecture.blogspot.com/"
                 icon={indexQuery.blogIcon.fluid}
               />
 
               <HomeCard
                 linkText="Contact"
-                link="blog"
+                link="/contact/"
                 icon={indexQuery.contactIcon.fluid}
               />
             </div>
