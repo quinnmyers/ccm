@@ -99,6 +99,12 @@ export const query = graphql`
           ...GatsbyContentfulFluid_noBase64
         }
       }
+      houzzLogo {
+        title
+        fluid(maxWidth: 800) {
+          ...GatsbyContentfulFluid_noBase64
+        }
+      }
     }
     contentfulHomePage {
       landingImage {

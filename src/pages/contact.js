@@ -107,7 +107,7 @@ class Contact extends Component {
                         <input type="text" />
                       </label>
 
-                      <label>
+                      <label className="message">
                         Message
                         <textarea name="message"></textarea>
                       </label>
