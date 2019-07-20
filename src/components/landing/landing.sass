@@ -8,17 +8,30 @@
         display: flex
         align-items: center
         justify-content: center
-        width: 100%
-        height: calc(100% - 100px)
+        width: 50%
+        // height: calc(100% - 100px)
+        height: 100%
+        @include tablet-phone
+            width: 65%
+        @include phone
+            width: 70%
         &__image[style]
+            margin-top: 70px
             @include tablet-phone 
                 width: 80% !important
+
 
     &__scroll
         justify-self: flex-end
         display: flex
         height: 70px
         width: 70px
+        @include tablet-phone
+            height: 50px
+            width: 50px
+        @include phone
+            height: 30px
+            width: 30px
         button
             width: 100%
             height: 100%
