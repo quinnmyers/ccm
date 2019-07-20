@@ -5,16 +5,13 @@ import Footer from "./footer"
 import Header from "./header"
 import "../base.sass"
 const Layout = ({ children }) => (
-
   <>
     <Header siteTitle={"Purple + Bold Starter"} />
     <div>
-      <main>{children}</main>
+      <main style={{ minHeight: "100vh" }}>{children}</main>
       <Footer></Footer>
     </div>
   </>
-
-
 )
 
 Layout.propTypes = {
