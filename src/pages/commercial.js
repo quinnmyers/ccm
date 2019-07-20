@@ -6,29 +6,40 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import Content from "../components/utility/Content/Content"
 import LightBox from "../components/light_box/light_box"
+
 class Commercial extends Component {
   constructor(props) {
     super(props)
     this.state = {}
   }
+  componentDidMount() {
+    console.log(this.props.data)
+  }
   render() {
     const { data } = this.props
-    const projectsQuery = data.allContentfulProjects
+    const projectsQuery = data.contentfulCommercialProjectsPage
     return (
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <Content>
           <div className="page">
             <div className="page__title">
-              <h2>Commercial Projects</h2>
-              <h4>CCM Architecture</h4>
+              <h2>{projectsQuery.pageTitle}</h2>
+              <h4>{projectsQuery.pageSubtitle}</h4>
             </div>
             <div className={`page__photos`}>
-              <LightBox
-                photos={projectsQuery.edges.filter(
-                  img => img.node.commercialOrResidental === false
-                )}
-              />
+              {projectsQuery.commercialProjectsOnPage.map((proj, index) => (
+                <div key={index} className="page__photos__single">
+                  <h4>{proj.title}</h4>
+                  <p>{proj.city}</p>
+                  <LightBox
+                    photos={proj.additionalImages}
+                    cover={proj.image.fluid}
+                    caption={proj.imageCaption.json}
+                    alt={proj.image.title}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </Content>
@@ -39,21 +50,25 @@ class Commercial extends Component {
 
 export const query = graphql`
   query commercialQuery {
-    allContentfulProjects {
-      edges {
-        node {
-          title
-          city
-          image {
-            fluid(maxWidth: 1500) {
-              ...GatsbyContentfulFluid_noBase64
-            }
-            file {
-              url
-            }
+    contentfulCommercialProjectsPage {
+      pageTitle
+      pageSubtitle
+      commercialProjectsOnPage {
+        additionalImages {
+          file {
+            url
           }
-
-          commercialOrResidental
+        }
+        imageCaption {
+          json
+        }
+        city
+        title
+        image {
+          title
+          fluid(maxWidth: 500) {
+            ...GatsbyContentfulFluid
+          }
         }
       }
     }
