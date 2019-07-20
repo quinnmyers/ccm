@@ -7,7 +7,6 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.2.0",
     "@contentful/rich-text-types": "^13.1.0",
-
     "gatsby": "^2.9.2",
     "gatsby-background-image": "^0.8.0",
     "gatsby-image": "^2.1.4",
@@ -21,6 +20,7 @@
     "gatsby-source-filesystem": "^2.0.39",
     "gatsby-transformer-sharp": "^2.1.21",
     "google-map-react": "^1.1.2",
+    "intersection-observer": "^0.7.0",
     "lightbox-react": "^0.3.7",
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
