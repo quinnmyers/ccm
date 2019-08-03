@@ -8,6 +8,9 @@ import Content from "../components/utility/Content/Content"
 import Landing from "../components/landing/landing"
 import FixedBg from "../components/fixed_bg/fixed_bg"
 import HomeCard from "../components/home_card/home_card"
+import Img from "gatsby-image"
+import ButtonRound from "../components/buttonRound/buttonRound"
+
 class IndexPage extends Component {
   constructor(props) {
     super(props)
@@ -60,8 +63,32 @@ class IndexPage extends Component {
             </div>
           </FixedBg>
           <Content>
-            <div className="link__bar" style={{ height: "100px" }}>
-              hello
+            <div className="link__bar">
+              <div className="link__bar__left">
+                <div className="link__bar__left__container">
+                  <div className="link__bar__left__container__image">
+                    <Img
+                      fluid={indexQuery.houzzIcon.fluid}
+                      alt={indexQuery.houzzIcon.title}
+                    />
+                  </div>
+                  <h4>View Our Houzz Profile</h4>
+                </div>
+              </div>
+              <div className="link__bar__right">
+                <h3>See What Our Clients Have To Say</h3>
+                <p>
+                  Take a look at our Houzz profile where you can read comments
+                  and reviews from our clients.
+                </p>
+                <ButtonRound
+                  type="link"
+                  action="https://www.houzz.com/pro/ccmellon/ccm-architecture#Reviews"
+                  innerText="View Houzz Reviews"
+                  fsize=".9"
+                  padding=".3em 2em .3em 2em"
+                />
+              </div>
             </div>
           </Content>
           <FixedBg backGroundImage={indexQuery.secondPageImage.fluid}>
@@ -139,6 +166,12 @@ export const query = graphql`
       }
       contactIcon {
         fluid {
+          ...GatsbyContentfulFluid_noBase64
+        }
+      }
+      houzzIcon {
+        title
+        fluid(maxWidth: 500) {
           ...GatsbyContentfulFluid_noBase64
         }
       }
