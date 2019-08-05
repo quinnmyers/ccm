@@ -18,8 +18,8 @@ class Models extends Component {
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <Content>
           <div className="page">
-            <a href="pano.html">try?</a>
-            <a href="alsoMove/pano.html">try?</a>
+            <a href="pano">try?</a>
+            <a href="alsoMove/pano">try?</a>
           </div>
         </Content>
       </Layout>
