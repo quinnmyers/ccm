@@ -7,10 +7,12 @@ import Content from "../components/utility/Content/Content"
 class Models extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = { url: "" }
   }
+
   componentDidMount() {
-    console.log(this.props.data)
+    this.setState({ url: window.location.origin })
+    console.log(this.state, window.location)
   }
   render() {
     return (
@@ -18,8 +20,7 @@ class Models extends Component {
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <Content>
           <div className="page">
-            <a href="pano">try?</a>
-            <a href="alsoMove/pano">try?</a>
+            <a href={`${this.state.url}/pano.html`}>try?</a>
           </div>
         </Content>
       </Layout>
