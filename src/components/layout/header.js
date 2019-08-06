@@ -6,6 +6,7 @@ class Headder extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      url: "",
       navlinks: [
         {
           title: "Home",
@@ -30,6 +31,10 @@ class Headder extends Component {
           ],
         },
         {
+          title: "Model",
+          link: `https://ccm.purpleandbold.net/pano.html`,
+        },
+        {
           title: "Blog",
           link: "https://ccmarchitecture.blogspot.com/",
         },
@@ -50,6 +55,9 @@ class Headder extends Component {
       subOpen: false,
     }
     this.toggleNav = this.toggleNav.bind(this)
+  }
+  componentDidMount() {
+    this.setState({ url: window.location.origin })
   }
   toggleNav() {
     const currentstate = this.state.navOpen
