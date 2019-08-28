@@ -93,8 +93,7 @@ class About extends Component {
             </div>
           </Content>
         </div>
-        <p>is this from contentful?</p>
-        <br />
+
         {/* <p>{this.props.data.contentfulHomePage.testContent}</p> */}
       </Layout>
     )

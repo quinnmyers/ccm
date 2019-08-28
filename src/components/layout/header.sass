@@ -30,14 +30,14 @@ $navgray: #2b2b2b
     .desktop
         font-size: .9em
         display: flex
-        width: 55%
+        width: 60%
         // background: lightseagreen
         @include edgesnap
-            width: 55%
+            width: 60%
         @include tabletlandscape
             font-size: .65em
         @include tablet
-            width: 70%
+            width: 73%
         @include navsnap
             display: none
         
@@ -133,10 +133,12 @@ $navgray: #2b2b2b
     .nav
          &__link
             a
+                white-space: nowrap
                 color: white
             &__drop
                 position: relative
                 &__content
+                    transition: all .35s ease-in-out
                     z-index: 100000
                     position: absolute
                     left: 0
@@ -147,10 +149,16 @@ $navgray: #2b2b2b
                     overflow: hidden
                     clip: rect(1px 1px 1px 1px)
                     clip: rect(1px, 1px, 1px, 1px)
+                    a
+                        padding: .25em .75em
+                        &:last-child
+                            padding-bottom: 0
+
+                        
             &:hover .nav__link__drop__content
                 display: flex
                 flex-direction: column
-                padding: 0.8rem 5px
+                padding: 1.3rem 10px
                 width: auto
                 height: auto
                 background: $navgray
@@ -159,7 +167,7 @@ $navgray: #2b2b2b
             .sub__show
                 display: flex
                 flex-direction: column
-                padding: 0.8rem 5px
+                padding: 1.3rem 10px
                 width: auto
                 height: auto
                 background: $navgray

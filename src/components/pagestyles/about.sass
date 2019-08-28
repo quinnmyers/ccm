@@ -16,10 +16,12 @@
       &__container
         width: 100%
         // background: pink
+
         &__members
           display: grid
           grid-template-columns: repeat(3, 1fr)
           grid-column-gap: 4em
+          
           @include edgesnap
             grid-template-columns: repeat( auto-fit, minmax(25%, 1fr) )
           @media(max-width: 900px)
@@ -33,3 +35,5 @@
             grid-column-gap: 3.25em
           @include phone-large
             grid-template-columns: repeat( auto-fit, minmax(80%, 1fr) )
+.member__container__photo
+  display: none
