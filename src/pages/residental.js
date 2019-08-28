@@ -6,6 +6,7 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import Content from "../components/utility/Content/Content"
 import LightBox from "../components/light_box/light_box"
+// import Spacer from "../components/utility/Spacer/Spacer"
 class Residental extends Component {
   constructor(props) {
     super(props)
@@ -23,20 +24,24 @@ class Residental extends Component {
         <Content>
           <div className="page">
             <div className="page__title">
-              <h2>{projectsQuery.pageTitle}</h2>
-              <h4>{projectsQuery.pageSubtitle}</h4>
+              <h2 className="page__header">{projectsQuery.pageTitle}</h2>
+              <h4 className="page__subheader">{projectsQuery.pageSubtitle}</h4>
             </div>
-            <div className={`page__photos`}>
+            <div className={`page__photos content__section`}>
               {projectsQuery.residentialProjectsOnPage.map((proj, index) => (
                 <div key={index} className="page__photos__single">
-                  <h4>{proj.title}</h4>
-                  <p>{proj.city}</p>
-                  <LightBox
-                    photos={proj.additionalImages}
-                    cover={proj.image.fluid}
-                    caption={proj.imageCaption.json}
-                    alt={proj.image.title}
-                  />
+                  <div className="page__photos__single__top">
+                    <h4>{proj.title}</h4>
+                    <p>{proj.city}</p>
+                  </div>
+                  <div className="page__photos__single__bottom">
+                    <LightBox
+                      photos={proj.additionalImages}
+                      cover={proj.image.fluid}
+                      caption={proj.imageCaption.json}
+                      alt={proj.image.title}
+                    />
+                  </div>
                 </div>
               ))}
             </div>

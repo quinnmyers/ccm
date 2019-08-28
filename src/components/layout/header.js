@@ -31,7 +31,7 @@ class Headder extends Component {
           ],
         },
         {
-          title: "Model",
+          title: "Renderings",
           link: `https://ccm.purpleandbold.net/pano.html`,
         },
         {

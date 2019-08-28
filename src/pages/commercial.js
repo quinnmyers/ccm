@@ -24,20 +24,24 @@ class Commercial extends Component {
         <Content>
           <div className="page">
             <div className="page__title">
-              <h2>{projectsQuery.pageTitle}</h2>
-              <h4>{projectsQuery.pageSubtitle}</h4>
+              <h2 className="page_header">{projectsQuery.pageTitle}</h2>
+              <h4 className="page__subheader">{projectsQuery.pageSubtitle}</h4>
             </div>
-            <div className={`page__photos`}>
+            <div className={`page__photos content__section`}>
               {projectsQuery.commercialProjectsOnPage.map((proj, index) => (
                 <div key={index} className="page__photos__single">
-                  <h4>{proj.title}</h4>
-                  <p>{proj.city}</p>
-                  <LightBox
-                    photos={proj.additionalImages}
-                    cover={proj.image.fluid}
-                    caption={proj.imageCaption.json}
-                    alt={proj.image.title}
-                  />
+                  <div className="page__photos__single__top">
+                    <h4>{proj.title}</h4>
+                    <p>{proj.city}</p>
+                  </div>
+                  <div className="page__photos__single__bottom">
+                    <LightBox
+                      photos={proj.additionalImages}
+                      cover={proj.image.fluid}
+                      caption={proj.imageCaption.json}
+                      alt={proj.image.title}
+                    />
+                  </div>
                 </div>
               ))}
             </div>
