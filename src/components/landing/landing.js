@@ -36,7 +36,10 @@ class Landing extends Component {
           </div>
         </div>
         <div className="bg__scroll">
-          <button onClick={() => this.handleScrolling()}>
+          <button
+            aria-label="link to navigation bar"
+            onClick={() => this.handleScrolling()}
+          >
             <Img fluid={this.props.arrow} />
           </button>
         </div>

@@ -23,7 +23,6 @@ class About extends Component {
   }
   componentDidMount() {
     // console.log(this.props)
-    process.nextTick(console.log("hi"))
   }
   measureInfoDivHeight(ref, name) {
     const el = ref
