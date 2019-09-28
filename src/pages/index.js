@@ -14,7 +14,9 @@ import ButtonRound from "../components/buttonRound/buttonRound"
 class IndexPage extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      houzzFlag: false,
+    }
     this.scrollRef = React.createRef()
   }
   render() {
@@ -64,15 +66,27 @@ class IndexPage extends Component {
           </FixedBg>
           <Content>
             <div className="link__bar">
-              <div className="link__bar__left">
+              <div
+                className="link__bar__left"
+                onMouseEnter={() => this.setState({ houzzFlag: true })}
+                onMouseLeave={() => this.setState({ houzzFlag: false })}
+              >
                 <div className="link__bar__left__container">
-                  <div className="link__bar__left__container__image">
+                  <div
+                    className={
+                      this.state.houzzFlag
+                        ? "link__bar__left__container__image houzzUnderlined"
+                        : "link__bar__left__container__image"
+                    }
+                  >
                     <Img
                       fluid={indexQuery.houzzIcon.fluid}
                       alt={indexQuery.houzzIcon.title}
                     />
                   </div>
-                  <h4>View Our Houzz Profile</h4>
+                  <h4 className={this.state.houzzFlag ? "houzzUnderlined" : ""}>
+                    View Our Houzz Profile
+                  </h4>
                 </div>
               </div>
               <div className="link__bar__right">
