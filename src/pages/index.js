@@ -34,7 +34,7 @@ class IndexPage extends Component {
           heroImageAlt={miscQuery.logo.title}
           scrollTo={this.scrollRef}
         />
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <SEO page="Home" />
         <Layout>
           <Content>
             <div ref={this.scrollRef} className="cta">

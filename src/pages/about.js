@@ -58,7 +58,10 @@ class About extends Component {
     const teamMember = aboutPage.teamMembers
     return (
       <Layout>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <SEO
+          page="About Us"
+          description="Learn more about CCM Architecture and our team."
+        />
 
         <div className="about">
           <Content>

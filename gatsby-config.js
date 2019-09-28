@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `CCM Architecture`,
-    description: `A website for CCM Architecture, a modern custom residential and commercial architecture firm in Seattle, Washington.`,
+    description: `CCM Architecture is an established architectural firm in Seattle, WA specializing in beautiful and functional modern homes.`,
     author: `Purple and Bold`,
   },
   plugins: [

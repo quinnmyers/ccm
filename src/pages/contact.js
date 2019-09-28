@@ -54,7 +54,10 @@ class Contact extends Component {
     // }
     return (
       <Layout>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <SEO
+          page="Contact"
+          description="Reach out to us today about your next project."
+        />
         <div className="contact">
           <Content>
             <div className="contact__content">

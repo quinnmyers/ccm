@@ -14,7 +14,10 @@ class Blog extends Component {
   render() {
     return (
       <Layout>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <SEO
+          page="Blog"
+          description="Keep up with CCM Arcitecture's latest projects."
+        />
         <Content>
           <p>is this from contentful?</p>
           <br />

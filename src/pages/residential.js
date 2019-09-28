@@ -23,7 +23,10 @@ class Residental extends Component {
     const projectsQuery = data.contentfulResidentialProjectsPage
     return (
       <Layout>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <SEO
+          page="Photos - Residential"
+          description="Check out the beautiful residential projects CCM Architecture has worked on."
+        />
         <Content>
           <div className="page">
             <div className="page__title">

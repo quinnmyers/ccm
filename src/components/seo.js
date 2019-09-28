@@ -40,7 +40,7 @@ function SEO({ description, lang, meta, keywords, title, page, image }) {
                 },
                 {
                   property: `og:url`,
-                  content: `https://www.thepastryacademy.com`,
+                  content: `https://www.ccmarchitecture.com`,
                 },
                 {
                   property: `og:image`,

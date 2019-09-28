@@ -21,7 +21,10 @@ class Commercial extends Component {
     const projectsQuery = data.contentfulCommercialProjectsPage
     return (
       <Layout>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <SEO
+          page="Photos - Commercial"
+          description="Check out the beautiful commercial projects CCM Architecture has worked on."
+        />
         <Content>
           <div className="page">
             <div className="page__title">
