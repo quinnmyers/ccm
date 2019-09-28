@@ -43,26 +43,28 @@
       width: 100%
       align-items: space-between
       justify-content: center
-  &__left 
-    cursor: pointer
+  &__left
     &__container
       display: flex 
       flex-direction: column 
       text-align: center
       width: 60%
-      
-      h4 
-        margin-top: 1em
-        align-self: center
-        transition: all .5s ease-in-out
-        border-bottom: 1px solid rgba(0,0,0,0)
-        &.houzzUnderlined
-          border-bottom: 1px solid rgba(0,0,0,1)
-      &__image 
-        width: 100%
-        transition: all 1s ease-in-out
-        &.houzzUnderlined 
-          transform: scale(1.04) translateY(-.5em)
+      cursor: pointer
+      a, a:visited, a:hover
+        text-decoration: none 
+        color: black
+        h4
+          display: inline-block
+          margin-top: 1em
+          transition: all .5s ease-in-out
+          border-bottom: 1px solid rgba(0,0,0,0)
+          &.houzzUnderlined
+            border-bottom: 1px solid rgba(0,0,0,1)
+        &__image 
+          width: 100%
+          transition: all 1s ease-in-out
+          &.houzzUnderlined 
+            transform: scale(1.04) translateY(-.5em)
 
   &__right 
     flex-direction: column 

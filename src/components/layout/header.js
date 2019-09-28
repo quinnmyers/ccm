@@ -25,8 +25,8 @@ class Headder extends Component {
               link: "/commercial/",
             },
             {
-              title: "Residental",
-              link: "/residental/",
+              title: "Residential",
+              link: "/residential/",
             },
           ],
         },

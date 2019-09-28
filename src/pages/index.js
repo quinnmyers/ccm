@@ -53,8 +53,8 @@ class IndexPage extends Component {
           <FixedBg backGroundImage={indexQuery.firstPageImage.fluid}>
             <div className="cards">
               <HomeCard
-                linkText="Residental"
-                link="/residental/"
+                linkText="Residential"
+                link="/residential/"
                 icon={indexQuery.residentialIcon.fluid}
               />
               <HomeCard
@@ -66,27 +66,34 @@ class IndexPage extends Component {
           </FixedBg>
           <Content>
             <div className="link__bar">
-              <div
-                className="link__bar__left"
-                onMouseEnter={() => this.setState({ houzzFlag: true })}
-                onMouseLeave={() => this.setState({ houzzFlag: false })}
-              >
-                <div className="link__bar__left__container">
-                  <div
-                    className={
-                      this.state.houzzFlag
-                        ? "link__bar__left__container__image houzzUnderlined"
-                        : "link__bar__left__container__image"
-                    }
+              <div className="link__bar__left">
+                <div
+                  className="link__bar__left__container"
+                  onMouseEnter={() => this.setState({ houzzFlag: true })}
+                  onMouseLeave={() => this.setState({ houzzFlag: false })}
+                >
+                  <a
+                    href="https://www.houzz.com/professionals/architects-and-building-designers/ccm-architecture-pfvwus-pf~881111097"
+                    target="__blank"
                   >
-                    <Img
-                      fluid={indexQuery.houzzIcon.fluid}
-                      alt={indexQuery.houzzIcon.title}
-                    />
-                  </div>
-                  <h4 className={this.state.houzzFlag ? "houzzUnderlined" : ""}>
-                    View Our Houzz Profile
-                  </h4>
+                    <div
+                      className={
+                        this.state.houzzFlag
+                          ? "link__bar__left__container__image houzzUnderlined"
+                          : "link__bar__left__container__image"
+                      }
+                    >
+                      <Img
+                        fluid={indexQuery.houzzIcon.fluid}
+                        alt={indexQuery.houzzIcon.title}
+                      />
+                    </div>
+                    <h4
+                      className={this.state.houzzFlag ? "houzzUnderlined" : ""}
+                    >
+                      View Our Houzz Profile
+                    </h4>
+                  </a>
                 </div>
               </div>
               <div className="link__bar__right">

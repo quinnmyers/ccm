@@ -6,6 +6,9 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import Content from "../components/utility/Content/Content"
 import LightBox from "../components/light_box/light_box"
+import Project from "../components/project/project"
+import { pseudoRandomBytes } from "crypto"
+
 // import Spacer from "../components/utility/Spacer/Spacer"
 class Residental extends Component {
   constructor(props) {
@@ -29,20 +32,15 @@ class Residental extends Component {
             </div>
             <div className={`page__photos content__section`}>
               {projectsQuery.residentialProjectsOnPage.map((proj, index) => (
-                <div key={index} className="page__photos__single">
-                  <div className="page__photos__single__top">
-                    <h4>{proj.title}</h4>
-                    <p>{proj.city}</p>
-                  </div>
-                  <div className="page__photos__single__bottom">
-                    <LightBox
-                      photos={proj.additionalImages}
-                      cover={proj.image.fluid}
-                      caption={proj.imageCaption.json}
-                      alt={proj.image.title}
-                    />
-                  </div>
-                </div>
+                <Project
+                  iterationKey={index}
+                  title={proj.title}
+                  city={proj.city}
+                  photos={proj.additionalImages}
+                  cover={proj.image.fluid}
+                  caption={proj.imageCaption.json}
+                  alt={proj.image.title}
+                />
               ))}
             </div>
           </div>

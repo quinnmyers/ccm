@@ -13,6 +13,14 @@ class LightBox extends Component {
       isOpen: false,
     }
   }
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.open !== state.isOpen) {
+      return {
+        isOpen: props.open,
+      }
+    }
+  }
   render() {
     const { photoIndex, isOpen } = this.state
     const Text = ({ children }) => <p>{children}</p>
@@ -27,7 +35,8 @@ class LightBox extends Component {
       },
     }
     return (
-      <div className="lightbox" onClick={() => this.setState({ isOpen: true })}>
+      // <div className="lightbox" onClick={() => this.setState({ isOpen: true })}>
+      <div className="lightbox">
         <Img fluid={this.props.cover} alt={this.props.alt} />
 
         {isOpen && (
@@ -47,7 +56,8 @@ class LightBox extends Component {
                   this.props.photos.length
               ].file.url
             }
-            onCloseRequest={() => this.setState({ isOpen: false })}
+            // onCloseRequest={() => this.setState({ isOpen: false })}
+            onCloseRequest={this.props.closeLightbox}
             onMovePrevRequest={() =>
               this.setState({
                 photoIndex:
