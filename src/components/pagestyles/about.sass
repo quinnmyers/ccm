@@ -18,12 +18,14 @@
         // background: pink
 
         &__members
-          display: grid
-          grid-template-columns: repeat(3, 1fr)
-          grid-column-gap: 4em
-          
+          // display: grid
+          margin-top: 4em
+          // grid-template-columns: repeat(1, 1fr)
+          // grid-column-gap: 4e
+          @include tablet-phone
+            margin-top: 1em
           @include edgesnap
-            grid-template-columns: repeat( auto-fit, minmax(25%, 1fr) )
+          grid-template-columns: repeat( auto-fit, minmax(25%, 1fr) )
           @media(max-width: 900px)
             grid-template-columns: repeat( auto-fit, minmax(28%, 1fr) )
             grid-column-gap: 3em
@@ -35,5 +37,17 @@
             grid-column-gap: 3.25em
           @include phone-large
             grid-template-columns: repeat( auto-fit, minmax(80%, 1fr) )
-.member__container__photo
-  display: none
+
+          // @include edgesnap
+          //   grid-template-columns: repeat( auto-fit, minmax(25%, 1fr) )
+          // @media(max-width: 900px)
+          //   grid-template-columns: repeat( auto-fit, minmax(28%, 1fr) )
+          //   grid-column-gap: 3em
+          // @media(max-width: 850px)
+          //   grid-template-columns: repeat( auto-fit, minmax(30%, 1fr) )
+          //   grid-column-gap: 4em
+          // @media(max-width: 500px)
+          //   grid-template-columns: repeat( auto-fit, minmax(31%, 1fr) )
+          //   grid-column-gap: 3.25em
+          // @include phone-large
+          //   grid-template-columns: repeat( auto-fit, minmax(80%, 1fr) )

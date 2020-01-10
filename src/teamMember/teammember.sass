@@ -4,20 +4,46 @@
   width: 100%
   // background: red
   margin-bottom: 3em
+  // removed for test
   grid-columns: span 1
   &__container 
-    &__photo 
+    display: flex
+    @include tablet-phone
+      flex-direction: column
+    &__photo
+      width: 32%
+      padding: 0em 1.5em
+      margin-top: .5em
+      height: 100%
+      @include tablet-phone
+        width: 40%
+        align-self: center
+        margin-bottom: 2em
+      @media(max-width: 650px)
+        width: 60%
+      @include phone-large
+        width: 70%
     &__info
+      flex: 1
+      padding-left: 1em
       &__name
-        font-size: 1.75em
+        font-size: 1.6em
         border-bottom: 1px solid lightgrey
         // background: red
         // text-decoration: underline
-        margin: .75em 0em .5em 0em
+        margin: 0em 0em .5em 0em
       &__item
         margin-bottom: 1em
         min-height: 1em
         // background: tan
+        transition: all 1s ease-in-out
+        .read-more-button
+          margin-top: .45em
+          text-decoration: underline
+          cursor: pointer 
+          font-size: 1.05em
+
+
         h5 
           font-size: .9em
           font-weight: bold 

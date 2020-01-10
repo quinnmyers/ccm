@@ -31,6 +31,7 @@
     "react-geocode": "^0.1.2",
     "react-helmet": "^5.2.1",
     "react-parallax": "^2.2.0",
+    "read-more-react": "^1.0.9",
     "sass-loader": "^7.1.0"
   },
   "devDependencies": {

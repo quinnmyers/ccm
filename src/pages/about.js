@@ -82,6 +82,7 @@ class About extends Component {
                         title={t.titles}
                         qualifications={t.qualifications}
                         skills={t.skills}
+                        bio={t.Biography.internal.content}
                         key={t.id}
                         measureHeight={this.measureInfoDivHeight}
                         titleHeight={this.state.titleHeight}
@@ -119,6 +120,11 @@ export const query = graphql`
         titles
         qualifications
         skills
+        Biography {
+          internal {
+            content
+          }
+        }
         photo {
           fluid(maxWidth: 750) {
             ...GatsbyContentfulFluid_noBase64
