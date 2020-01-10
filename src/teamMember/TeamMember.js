@@ -17,6 +17,8 @@ class TeamMember extends Component {
     this.measureTitle()
     this.measureQualifications()
     this.measureSkill()
+    console.log(this.props.skills)
+
     //removed this for now because it wasn't working well when people had a lot of info in one of the categories
     // process.nextTick(this.setHeights)
   }
@@ -69,7 +71,7 @@ class TeamMember extends Component {
               style={{ height: this.state.skillHeight + "px" }}
             >
               <h5>SKILLS</h5>
-              <span>{this.props.skills}</span>
+              <span>{this.props.skills.join(", ")}</span>
             </div>
             <div
               className="member__container__info__item"
