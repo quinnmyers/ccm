@@ -75,21 +75,27 @@ class About extends Component {
                 <h2>{aboutPage.teamSectionTitle}</h2>
                 <div className="about__content__team__container">
                   <div className="about__content__team__container__members">
-                    {aboutPage.teamMembers.map(t => (
-                      <TeamMember
-                        name={t.name}
-                        photo={t.photo.fluid}
-                        title={t.titles}
-                        qualifications={t.qualifications}
-                        skills={t.skills}
-                        bio={t.Biography.internal.content}
-                        key={t.id}
-                        measureHeight={this.measureInfoDivHeight}
-                        titleHeight={this.state.titleHeight}
-                        qualificationHeight={this.state.qualificationHeight}
-                        skillHeight={this.state.skillHeight}
-                      />
-                    ))}
+                    {aboutPage.teamMembers.map(t => {
+                      if (t.photo) {
+                        return (
+                          <TeamMember
+                            name={t.name}
+                            photo={t.photo.fluid}
+                            title={t.titles}
+                            qualifications={t.qualifications}
+                            skills={t.skills}
+                            bio={t.Biography.internal.content}
+                            key={t.id}
+                            measureHeight={this.measureInfoDivHeight}
+                            titleHeight={this.state.titleHeight}
+                            qualificationHeight={this.state.qualificationHeight}
+                            skillHeight={this.state.skillHeight}
+                          />
+                        )
+                      } else {
+                        return ""
+                      }
+                    })}
                   </div>
                 </div>
               </div>
